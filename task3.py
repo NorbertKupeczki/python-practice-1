@@ -8,12 +8,6 @@ def get_random_word():
     return list_of_words[random.randrange(0, len(list_of_words))]
 
 
-def str_to_lst(string):
-    lst = []
-    lst[:0] = string
-    return lst
-
-
 def draw_hangman(lives_left):
     print(" _____")
     print(" |   |", end="")
@@ -80,7 +74,26 @@ def check_conditions():
         return False
 
 
-list_of_words = ["water", "melon", "bicycle"]
+list_of_words = ["snake",
+                 "python",
+                 "amiga",
+                 "terminator",
+                 "mandalorian",
+                 "playstation",
+                 "nintendo",
+                 "controller",
+                 "console",
+                 "witcher",
+                 "atari",
+                 "cyberpunk",
+                 "roleplay",
+                 "commodore",
+                 "hangman",
+                 "arcade",
+                 "cartridge",
+                 "mario",
+                 "programmer",
+                 "gamer"]
 
 if __name__ == '__main__':
     print("=" * 18)
@@ -91,7 +104,7 @@ if __name__ == '__main__':
     lives = 6
     game_is_over = False
     secret_word = get_random_word()
-    print(secret_word)
+    # print(secret_word)
     player_word = []
     used_letters = []
     init_player_word(secret_word)
