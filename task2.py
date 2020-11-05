@@ -10,11 +10,11 @@ def generate_random_number():
 
 def evaluation(guess, random_n):
     if guess > random_n:
-        print(f"Wrong! Lower, the number is!")
+        print("Wrong! Lower, the number is!")
     elif guess < random_n:
-        print(f"Wrong! Higher, the number is!")
+        print("Wrong! Higher, the number is!")
     else:
-        print(f"Well done! Correct, your guess is!")
+        print("Well done! Correct, your guess is!")
 
 
 def end_of_game(tries):
@@ -23,26 +23,34 @@ def end_of_game(tries):
     elif tries > 1:
         print(f"Good! Only {tries} tries to find the correct number, you needed.")
     else:
-        print(f"Marvelous! Only once, you needed to try.\nA great Jedi master, one day you will become!")
+        print("Marvelous! Only once, you needed to try.\nA great Jedi master, one day you will become!")
+
+
+def player_input():
+    inpt = input("\nGuess the number, you must:")
+    while not inpt.isdigit():
+        inpt = input("A number, you must guess:")
+    return int(inpt)
 
 
 if __name__ == '__main__':
     random.seed()
 
     print("*" * 61)
-    print(f"Welcome youngling! The \"Guess the number\" game, we will play!")
-    print(f"Use the Force to find the correct number, you must!")
-    print(f"A hint, I will give: between 1 and 100, the umber is.")
+    print("Welcome youngling! The \"Guess the number\" game, we will play!")
+    print("Use the Force to find the correct number, you must!")
+    print("A hint, I will give: between 1 and 100, the umber is.")
 
-    random_number = int(generate_random_number())
-    number_guessed = int(0)
-    number_of_tries = int(0)
+    random_number = generate_random_number()
+    number_guessed = 0
+    number_of_tries = 0
 
     # Uncomment line below for testing purposes
     # print(random_number)
 
     while random_number != number_guessed:
-        number_guessed = int(input("\nGuess the number, you must:"))
+
+        number_guessed = player_input()
         evaluation(number_guessed, random_number)
         number_of_tries += 1
 

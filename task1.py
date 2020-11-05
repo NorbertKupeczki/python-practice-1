@@ -54,10 +54,10 @@ their dialogue."""]
 
 if __name__ == '__main__':
     random.seed()
-    print(f"*" * 54)
-    print(f"Welcome young one! If you stay for a while and listen,")
-    print(f"I will tell you a great secret, that not many knows!")
-    print(f"Where should I begin? Oh yes! Of course! Here it comes:\n")
+    print("*" * 54)
+    print("Welcome young one! If you stay for a while and listen,")
+    print("I will tell you a great secret, that not many knows!")
+    print("Where should I begin? Oh yes! Of course! Here it comes:\n")
 
     print(game_facts[random.randrange(0, 9)])
 
