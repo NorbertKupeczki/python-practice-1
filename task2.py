@@ -1,4 +1,4 @@
-# GUESS THE NUMBER
+# GUESS THE NUMBER by Norbert Kupeczki
 
 import sys
 import random
@@ -8,6 +8,7 @@ def generate_random_number():
     return random.randrange(1, 100)
 
 
+# Function to evaluate the player's guess and give them feedback
 def evaluation(guess, random_n):
     if guess > random_n:
         print("Wrong! Lower, the number is!")
@@ -17,6 +18,7 @@ def evaluation(guess, random_n):
         print("Well done! Correct, your guess is!")
 
 
+# Feedback on the player's performance based on how many times they had to try to find the number
 def end_of_game(tries):
     if tries > 7:
         print(f"{tries} tries, you needed. Practice more, you must!")
@@ -26,11 +28,12 @@ def end_of_game(tries):
         print("Marvelous! Only once, you needed to try.\nA great Jedi master, one day you will become!")
 
 
+# Asking for a player input + validation
 def player_input():
-    inpt = input("\nGuess the number, you must:")
-    while not inpt.isdigit():
-        inpt = input("A number, you must guess:")
-    return int(inpt)
+    p_input = input("\nGuess the number, you must:")
+    while not p_input.isdigit():
+        p_input = input("A number, you must guess:")
+    return int(p_input)
 
 
 if __name__ == '__main__':
@@ -48,12 +51,14 @@ if __name__ == '__main__':
     # Uncomment line below for testing purposes
     # print(random_number)
 
+    # Keep looping until the player finds the correct number
     while random_number != number_guessed:
 
         number_guessed = player_input()
         evaluation(number_guessed, random_number)
         number_of_tries += 1
 
+    # End of game message to the player
     end_of_game(number_of_tries)
 
     sys.exit(0)

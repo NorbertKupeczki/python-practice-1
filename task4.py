@@ -1,4 +1,4 @@
-# TAMAGOCHI
+# TAMAGOCHI by Norbert Kupeczki
 
 import sys
 

@@ -1,8 +1,9 @@
-# RANDOM GAME FACTS
+# RANDOM GAME FACTS by Norbert Kupeczki
 
 import sys
 import random
 
+# A list that contains 10 random game facts
 game_facts = ["""The Nintendo Comboy
 South Korea put a ban on Japanese cultural imports following World War II, and it wasn’t lifted until 2004.
 That didn’t mean South Korean gamers didn’t get to know Mario. Hyundai Electronics distributed Nintendo’s product
@@ -53,12 +54,13 @@ called Shutdown. You’ll need to stand next to two specific dockworkers for a c
 their dialogue."""]
 
 if __name__ == '__main__':
+    # New random seed for the random number generation
     random.seed()
     print("*" * 54)
-    print("Welcome young one! If you stay for a while and listen,")
+    print("Welcome stranger! If you stay for a while and listen,")
     print("I will tell you a great secret, that not many knows!")
     print("Where should I begin? Oh yes! Of course! Here it comes:\n")
-
+    # print out a fact from the list using a randomized index
     print(game_facts[random.randrange(0, 9)])
 
     sys.exit(0)
