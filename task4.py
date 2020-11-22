@@ -173,7 +173,7 @@ class DeadState(State):
         return self
 
 
-class DigitalPet:  # A simple state machine that mimics the functionality of a device from a high level.
+class DigitalPet:
     def __init__(self):
         self.pet_name = input("Give your pet a name:")
         self.boredom = 50
@@ -183,7 +183,7 @@ class DigitalPet:  # A simple state machine that mimics the functionality of a d
         self.state = IsBorn()
 
     def transition(self, action):
-        # The next state will be the result of the transition() function.
+
         self.state = self.state.transition(action)
         self.draw_pet()
 
