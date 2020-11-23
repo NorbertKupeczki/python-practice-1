@@ -4,6 +4,28 @@ import sys
 import random
 
 
+list_of_words = ["snake",
+                 "python",
+                 "amiga",
+                 "terminator",
+                 "mandalorian",
+                 "playstation",
+                 "nintendo",
+                 "controller",
+                 "console",
+                 "witcher",
+                 "atari",
+                 "cyberpunk",
+                 "roleplay",
+                 "commodore",
+                 "hangman",
+                 "arcade",
+                 "cartridge",
+                 "mario",
+                 "programmer",
+                 "gamer"]
+
+
 # Return a random word from a list of words and casts it to upper()
 def get_random_word():
     return list_of_words[random.randrange(0, len(list_of_words))].upper()
@@ -112,27 +134,6 @@ def play_again():
         print("=" * 27)
         return False
 
-
-list_of_words = ["snake",
-                 "python",
-                 "amiga",
-                 "terminator",
-                 "mandalorian",
-                 "playstation",
-                 "nintendo",
-                 "controller",
-                 "console",
-                 "witcher",
-                 "atari",
-                 "cyberpunk",
-                 "roleplay",
-                 "commodore",
-                 "hangman",
-                 "arcade",
-                 "cartridge",
-                 "mario",
-                 "programmer",
-                 "gamer"]
 
 if __name__ == '__main__':
     playing = True

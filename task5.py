@@ -20,7 +20,8 @@ grey = (50, 50, 50)
 red = (255, 0, 0)
 green = (0, 255, 0)
 
-snake_block = 10
+# Size and speed of the snake
+snake_rect = 10
 snake_speed = 10
 clock = pygame.time.Clock()
 
@@ -43,6 +44,9 @@ class GameClass:
     snake_length = 1
     snake_head = []
 
+    def __init__(self):
+        print("Game successfully initialized")
+
 
 def your_score(score):
     pygame.draw.rect(screen, black, [0, 0, screen_width, header_height])
@@ -55,6 +59,13 @@ def draw_snake(snake_bl, snake_body_list):
         pygame.draw.rect(screen, green, [x[0], x[1], snake_bl, snake_bl])
     snake_h = snake_body_list[len(snake_body_list) - 1]
     pygame.draw.rect(screen, black, [snake_h[0] + 2, snake_h[1] + 2, snake_bl - 4, snake_bl - 4])
+
+
+def draw_apple():
+    pygame.draw.rect(screen, red, [game.food_x + 1, game.food_y + 2, 3, 8])
+    pygame.draw.rect(screen, red, [game.food_x + 6, game.food_y + 2, 3, 8])
+    pygame.draw.rect(screen, red, [game.food_x, game.food_y + 3, 10, 5])
+    pygame.draw.rect(screen, green, [game.food_x + 4, game.food_y, 2, 4])
 
 
 def game_over_screen(score):
@@ -71,8 +82,8 @@ def spawn_apple():
     legal_spawn = False
     apple_loc = [0, 0]
     while not legal_spawn:
-        apple_loc[0] = round(random.randrange(0, screen_width - snake_block) / 10.0) * 10.0
-        apple_loc[1] = round(random.randrange(header_height, screen_height - snake_block) / 10.0) * 10.0
+        apple_loc[0] = round(random.randrange(0, screen_width - snake_rect) / 10.0) * 10.0
+        apple_loc[1] = round(random.randrange(header_height, screen_height - snake_rect) / 10.0) * 10.0
         print(apple_loc)
         if game.snake_body:
             if apple_loc not in game.snake_body:
@@ -108,16 +119,16 @@ def input_event_handling():
                 game.game_over = False
                 game.playing_snake = False
             elif event.key == pygame.K_LEFT:
-                game.snake_x_change = -snake_block
+                game.snake_x_change = -snake_rect
                 game.snake_y_change = 0
             elif event.key == pygame.K_RIGHT:
-                game.snake_x_change = snake_block
+                game.snake_x_change = snake_rect
                 game.snake_y_change = 0
             elif event.key == pygame.K_UP:
-                game.snake_y_change = -snake_block
+                game.snake_y_change = -snake_rect
                 game.snake_x_change = 0
             elif event.key == pygame.K_DOWN:
-                game.snake_y_change = snake_block
+                game.snake_y_change = snake_rect
                 game.snake_x_change = 0
 
 
@@ -153,11 +164,8 @@ def apple_eaten_check():
 
 def render_game():
     screen.fill(grey)
-    pygame.draw.rect(screen, red, [game.food_x+1, game.food_y+2, 3, 8])
-    pygame.draw.rect(screen, red, [game.food_x+6, game.food_y+2, 3, 8])
-    pygame.draw.rect(screen, red, [game.food_x, game.food_y+3, 10, 5])
-    pygame.draw.rect(screen, green, [game.food_x+4, game.food_y, 2, 4])
-    draw_snake(snake_block, game.snake_body)
+    draw_apple()
+    draw_snake(snake_rect, game.snake_body)
     your_score(game.snake_length - 1)
 
 

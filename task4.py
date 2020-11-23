@@ -7,7 +7,7 @@ def game_intro():
     print("="*100+""""
 Hi, welcome to Tamagochi!
 Soon you will receive your very own virtual pet, here are some instructions how to take care of it.
-You have to mind its needs! It needs to sleep, play and eat. Maintain his Happiness, Food and Energy
+You have to mind its needs! It needs to sleep, play and eat. Maintain its Happiness, Food and Energy
 levels above 0, otherwise he will die from depression, starvation or exhaustion.
 
 If at any point you need some help about the possible commands, enter 'I', or if you want to quit,

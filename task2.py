@@ -36,7 +36,7 @@ def player_input():
     return int(p_input)
 
 
-if __name__ == '__main__':
+def guess_the_number():
     random.seed()
 
     print("*" * 61)
@@ -53,7 +53,6 @@ if __name__ == '__main__':
 
     # Keep looping until the player finds the correct number
     while random_number != number_guessed:
-
         number_guessed = player_input()
         evaluation(number_guessed, random_number)
         number_of_tries += 1
@@ -61,4 +60,7 @@ if __name__ == '__main__':
     # End of game message to the player
     end_of_game(number_of_tries)
 
+
+if __name__ == '__main__':
+    guess_the_number()
     sys.exit(0)

@@ -53,14 +53,16 @@ in which they recorded audio for dockworkers aboard a spaceship. This audio made
 called Shutdown. You’ll need to stand next to two specific dockworkers for a couple of minutes to trigger
 their dialogue."""]
 
-if __name__ == '__main__':
-    # New random seed for the random number generation
+
+def get_fact():
     random.seed()
     print("*" * 54)
     print("Welcome stranger! If you stay for a while and listen,")
     print("I will tell you a great secret, that not many knows!")
     print("Where should I begin? Oh yes! Of course! Here it comes:\n")
-    # print out a fact from the list using a randomized index
     print(game_facts[random.randrange(0, 9)])
 
+
+if __name__ == '__main__':
+    get_fact()
     sys.exit(0)
